@@ -1,10 +1,3 @@
-const greeting = 'Hello World';
-console.log(greeting);
+const person = require('./mymodule1');
 
-const getData = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-};
-
-getData('https://jsonplaceholder.typicode.com/posts');
+console.log(person.name);
