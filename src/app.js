@@ -26,10 +26,14 @@ function submitPost() {
   const title = document.querySelector('#title').value;
   const body = document.querySelector('#body').value;
 
-  const data = {
-    title,
-    body,
-  };
+  if (title === '' || body === '') {
+    ui.showAlert('Please fill in all fields', 'alert alert-danger');
+  } else {
+    const data = {
+      title,
+      body,
+    };
+  }
 
   // Create Post
   http
