@@ -80,6 +80,11 @@ class UI {
     this.changeFormState('edit');
   }
 
+  // Clear ID hidden value
+  clearIdInput() {
+    this.idInput.value = '';
+  }
+
   // Change the form state
   changeFormState(type) {
     if (type === 'edit') {
