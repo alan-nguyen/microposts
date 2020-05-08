@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', getPosts);
 // Listen for submit post
 document.querySelector('.post-submit').addEventListener('click', submitPost);
 
-// Listen for delete
-document.querySelector('#posts').addEventListener('click', deletePost);
+// // Listen for delete
+// document.querySelector('#posts').addEventListener('click', deletePost);
+
+// Listen for edit state
+document.querySelector('#posts').addEventListener('click', enableEdit);
 
 // Get Posts
 function getPosts() {
@@ -37,4 +40,23 @@ function submitPost() {
       getPosts();
     })
     .catch((err) => console.log(err));
+}
+
+// Enable edit state
+function enableEdit(e) {
+  if (e.target.parentElement.classList.contains('edit')) {
+    let id = e.target.parentElement.dataset.id;
+    let title =
+      e.target.parentElement.previousElementSibling.previousElementSibling
+        .textContent;
+    let body = e.target.parentElement.previousElementSibling.textContent;
+
+    const data = {
+      id,
+      title,
+      body,
+    };
+  }
+
+  e.preventDefault();
 }
