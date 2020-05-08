@@ -47,6 +47,11 @@ class UI {
     const posts = document.querySelector('#posts');
     // Insert alert div
     container.insertBefore(div, posts);
+
+    // Timeout
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
   }
 
   clearFields() {
