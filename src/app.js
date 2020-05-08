@@ -56,6 +56,9 @@ function enableEdit(e) {
       title,
       body,
     };
+
+    // Fill form with current post
+    ui.fillForm(data);
   }
 
   e.preventDefault();
