@@ -4,7 +4,7 @@ class UI {
     this.titleInput = document.querySelector('#title');
     this.bodyInput = document.querySelector('#body');
     this.idInput = document.querySelector('#id');
-    this.postSubmit = document.querySelector('#post-submit');
+    this.postSubmit = document.querySelector('.post-submit');
     this.forState = 'add';
   }
 
@@ -79,6 +79,10 @@ class UI {
 
     this.changeFormState('edit');
   }
+
+  // Change the form state
+  changeFormState(type) {
+  
 }
 
 export const ui = new UI();
