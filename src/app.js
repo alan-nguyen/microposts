@@ -19,4 +19,9 @@ function getPosts() {
 function submitPost() {
   const title = document.querySelector('#title').value;
   const body = document.querySelector('#body').value;
+
+  const data = {
+    title,
+    body,
+  };
 }
