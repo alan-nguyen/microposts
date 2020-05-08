@@ -24,4 +24,12 @@ function submitPost() {
     title,
     body,
   };
+
+  // Create Post
+  http
+    .post('http://localhost:3000/posts', data)
+    .then((data) => {
+      getPosts();
+    })
+    .catch((err) => console.log(err));
 }
