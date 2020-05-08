@@ -32,7 +32,24 @@ class UI {
     this.post.innerHTML = output;
   }
 
-  clearField() {
+  showAlert(message, className) {
+    this.clearAlert();
+
+    // Create div
+    const div = document.createElement('div');
+    // Add classes
+    div.className = className;
+    // Add text
+    div.appendChild(document.createTextNode(message));
+    //Get parent
+    const container = document.querySelector('.postsContainer');
+    // Get posts
+    const posts = document.querySelector('#posts');
+    // Insert alert div
+    container.insertBefore(div, posts);
+  }
+
+  clearFields() {
     this.titleInput.value = '';
     this.bodyInput.value = '';
   }
