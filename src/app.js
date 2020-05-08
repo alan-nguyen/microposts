@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', getPosts);
 // Listen for submit post
 document.querySelector('.post-submit').addEventListener('click', submitPost);
 
+// Listen for delete
+document.querySelector('#posts').addEventListener('click', deletePost);
+
 // Get Posts
 function getPosts() {
   http
