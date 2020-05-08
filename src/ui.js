@@ -82,7 +82,12 @@ class UI {
 
   // Change the form state
   changeFormState(type) {
-  
+    if (type === 'edit') {
+      this.postSubmit.textContent = 'Update Post';
+      this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+    } else {
+    }
+  }
 }
 
 export const ui = new UI();
