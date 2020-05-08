@@ -13,6 +13,9 @@ document.querySelector('.post-submit').addEventListener('click', submitPost);
 // Listen for edit state
 document.querySelector('#posts').addEventListener('click', enableEdit);
 
+// Listen for cancel
+document.querySelector('.card-form').addEventListener('click', cancelEdit);
+
 // Get Posts
 function getPosts() {
   http
