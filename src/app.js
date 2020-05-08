@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', getPosts);
 // Listen for submit post
 document.querySelector('.post-submit').addEventListener('click', submitPost);
 
-// // Listen for delete
-// document.querySelector('#posts').addEventListener('click', deletePost);
+// Listen for delete
+document.querySelector('#posts').addEventListener('click', deletePost);
 
 // Listen for edit state
 document.querySelector('#posts').addEventListener('click', enableEdit);
@@ -61,6 +61,24 @@ function submitPost() {
         .catch((err) => console.log(err));
     }
   }
+}
+
+// Delete Post
+function deletePost(e) {
+  if (e.target.parentElement.classList.contains('delete')) {
+    const id = e.target.parentElement.dataset.id;
+    if (confirm('Are you sure?')) {
+      http
+        .delete(`http://localhost:3000/posts/${id}`)
+        .then((data) => {
+          ui.showAlert('Post removed', 'alert alert success');
+          getPosts();
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
+  e.preventDefault();
 }
 
 // Enable edit state
