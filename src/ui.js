@@ -31,6 +31,11 @@ class UI {
 
     this.post.innerHTML = output;
   }
+
+  clearField() {
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
+  }
 }
 
 export const ui = new UI();
